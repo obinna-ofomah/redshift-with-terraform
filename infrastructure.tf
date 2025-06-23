@@ -2,7 +2,7 @@
 resource "aws_vpc" "obinna-redshift-vpc" {
   cidr_block           = "10.10.0.0/16"
   enable_dns_hostnames = true
-  
+
   tags = {
     Name        = "obinna_redshift_vpc"
     Environment = "development team"
@@ -60,8 +60,9 @@ resource "aws_redshift_cluster" "obinna_redshift" {
   database_name      = "mydb"
   master_username    = "exampleuser"
   node_type          = "dc1.large"
-  number_of_nodes    =  3
-  
+  cluster_type       = "multi-node"
+  number_of_nodes    = 3
+
 
   manage_master_password = true
 }
