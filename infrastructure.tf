@@ -56,9 +56,9 @@ resource "aws_iam_role" "obinna-redshift-role" {
 }
 
 resource "aws_redshift_cluster" "obinna_redshift" {
-  cluster_identifier = "tf-redshift-cluster"
-  database_name      = "mydb"
-  master_username    = "exampleuser"
+  cluster_identifier = "obinna-redshift-cluster"
+  database_name      = "payments_dw"
+  master_username    = "obinna_20"
   node_type          = "dc1.large"
   cluster_type       = "multi-node"
   number_of_nodes    = 3
